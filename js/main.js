@@ -9,3 +9,7 @@
 $('#fullpage').onepage_scroll({
     animationTime: 600
 })
+$('#slick').slick({
+    prevArrow: $('#custom-prev'),
+    nextArrow: $('#custom-next')
+})

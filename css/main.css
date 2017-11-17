@@ -95,11 +95,11 @@ section.section {
   transform: translateX(-50%);
   text-align: center;
 }
-#landing-section .play-rectangle {
+#landing-section .play-rectangle, #custom-next, #custom-prev {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 2px solid #f1c40f;
+  border: 3px solid #f1c40f;
   margin: 0 auto;
   position: relative;
   cursor: pointer;
@@ -123,7 +123,36 @@ section.section {
 
 #projects-section .slide {
   display: flex;
+  flex-wrap: wrap;
 }
+#custom-prev, #custom-next {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#custom-prev {
+  left: 25px;
+}
+#custom-next {
+  right: 25px;
+}
+#custom-prev i, #custom-next i {
+  position: absolute;
+  font-size: 5rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#custom-prev i:first-child, #custom-next i:first-child {
+  left: 35%;
+}
+#custom-prev i:last-child, #custom-next i:last-child {
+  left: 65%;
+}
+#custom-prev i {
+  transform: rotate(180deg) translate(50%, 50%);
+}
+
 #projects-section .box {
   width: 50vw;
   height: 50vh;
@@ -210,4 +239,14 @@ section.section {
 #services-section .service-box:nth-child(4) .service-img {
   background: url("../media/images/services-video.jpg") center center;
   background-size: cover;
+}
+
+#arr {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  z-index: 5;
 }
