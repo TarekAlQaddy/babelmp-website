@@ -27,6 +27,9 @@ body {
 .bold {
   font-weight: 700;
 }
+.light {
+  font-weight: 300;
+}
 .extra-bold {
   font-weight: 900;
 }
@@ -241,12 +244,92 @@ section.section {
   background-size: cover;
 }
 
-#arr {
-  width: 60px;
-  height: 60px;
-  background: #fff;
+
+#team-section {
+  display: flex;
+  flex-wrap: nowrap;
+}
+#team-section .main-image-container {
+  width: 70%;
+  background: url("../media/images/team-big.jpg") center center no-repeat;
+  background-size: cover;
+}
+#team-section .title-container {
+  width: 30%;
+}
+#team-section .title-container .upper-half {
+  padding: 20px;
+  height: 50%;
+}
+#team-section .title-container .upper-half h2 {
+  font-size: 8rem;
+}
+#team-section .title-container .lower-half {
+  height: 50%;
+  padding: 20px 0;
+}
+#team-section .team-container {
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+#team-section .team-member {
+  width: 160px;
+  height: 160px;
+  background: greenyellow;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+  cursor: pointer;
+}
+#team-section .team-member .layout {
   position: absolute;
-  top: 50%;
-  left: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: grayscale(100%);
+  transition: 0.4s;
+  opacity: 1;
+}
+#team-section .team-member:hover {
+  transform: translateY(-20%);
+}
+#team-section .team-member:hover .layout {
+  opacity: 0;
+}
+#team-section .team-member:not(:first-child) {
+  margin-left: -18%;
+}
+#team-section .team-member:first-child {
+  background: black;
+  z-index: 12;
+}
+#team-section .team-member:nth-child(2) {
+  background: blue;
+  z-index: 11;
+}
+#team-section .team-member:nth-child(3) {
+  background: red;
+  z-index: 10;
+}
+#team-section .team-member:nth-child(4) {
+  background: yellow;
+  z-index: 9;
+}
+#team-section .team-member:nth-child(5) {
+  background: orange;
+  z-index: 8;
+}
+#team-section .team-member:nth-child(6) {
+  background: darkolivegreen;
+  z-index: 7;
+}
+#team-section .team-member:nth-child(7) {
+  background: black;
+  z-index: 6;
+}
+#team-section .team-member:nth-child(8) {
+  background: lightseagreen;
   z-index: 5;
 }
