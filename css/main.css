@@ -84,9 +84,11 @@ section.section {
 /*      LANDING       */
 /**********************/
 
+#landing-section {
+  padding-top: 40vh;
+}
 #landing-section .text-container {
   text-align: center;
-  margin-top: 40vh;
 }
 #landing-section .text-container h1 {
   font-weight: 700;
@@ -159,7 +161,7 @@ section.section {
 }
 
 #projects-section .box {
-  width: 50vw;
+  width: 100%;
   height: 50vh;
 }
 
@@ -263,6 +265,7 @@ section.section {
 #team-section {
   display: flex;
   flex-wrap: nowrap;
+  flex-direction: row-reverse;
 }
 #team-section .main-image-container {
   width: 70%;
@@ -530,6 +533,9 @@ section.section {
   #about-section .about-clients .client {
     height: 65px;
   }
+  #about-section .about-clients .category {
+    width: 100px;
+  }
 }
 
 @media all and (max-width: 1200px) {
@@ -598,6 +604,11 @@ section.section {
 
 
 @media all and (max-width: 850px) {
+
+  /**********************/
+  /*        NAV         */
+  /**********************/
+
   #hamburger-menu {
     display: block;
     width: 40px;
@@ -647,7 +658,6 @@ section.section {
   #nav > a img {
     width: 140px;
   }
-
   #nav ul li {
     float: none;
     display: block;
@@ -655,6 +665,7 @@ section.section {
     margin: 4% 0;
     opacity: 0;
   }
+
   #nav ul li:first-child {
     transition: opacity 0.7s 0.8s;
   }
@@ -673,7 +684,6 @@ section.section {
   #nav ul li:nth-child(6) {
     transition: opacity 0.7s 1.3s;
   }
-
 
   #nav ul li:last-child {
     display: inline-block;
@@ -694,5 +704,124 @@ section.section {
   }
   #nav.active ul li {
     opacity: 1;
+  }
+
+
+  /**********************/
+  /*      LANDING       */
+  /**********************/
+
+  #landing-section .text-container span.yellow-color {
+    display: block;
+  }
+
+
+  /**********************/
+  /*        TEAM        */
+  /**********************/
+
+  #team-section {
+    display: block;
+    height: auto;
+    width: 100%;
+    text-align: center;
+  }
+  #team-section .main-image-container {
+    width: 100%;
+  }
+  #team-section .title-container {
+    width: 100%;
+  }
+  #team-section .title-container .upper-half {
+    padding: 30px;
+  }
+  #team-section .upper-half h5 {
+    font-size: 3rem;
+  }
+  #team-section .upper-half h5:last-child {
+    font-size: 2.5rem;
+  }
+  #team-section .lower-half .hiring h5 {
+    font-size: 2rem;
+  }
+
+
+  /**********************/
+  /*       ABOUT        */
+  /**********************/
+
+
+  #about-section {
+    display: block;
+    height: auto;
+  }
+  #about-section .about-text,
+  #about-section .about-clients {
+    width: 100%;
+  }
+  #about-section .about-text {
+    text-align: center;
+    padding: 30px;
+    height: auto;
+  }
+  #about-section .about-text h2 {
+    font-size: 8rem;
+    margin: 20px 0;
+  }
+  #about-section .about-text h5 {
+    font-size: 3rem;
+  }
+  #about-section .about-text .line-divider {
+    display: block;
+    margin: 10px auto;
+  }
+  #about-section .about-text .reason {
+    margin-top: 35px;
+  }
+  #about-section .about-text .reason h5 {
+    font-size: 2.5rem;
+  }
+  #about-section .about-clients h2 {
+    text-align: center;
+  }
+  #about-section .about-clients h2 {
+    font-size: 8rem;
+    text-transform: uppercase;
+  }
+  #about-section .clients-block .category {
+    width: 140px;
+    font-size: 3rem;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #about-section .clients-block {
+    text-align: center;
+  }
+  #about-section .about-clients .client {
+    width: 25%;
+    margin: 3%;
+  }
+  #about-section .about-clients .clients-block {
+    margin: 10% 0;
+  }
+  #about-section .about-clients .clients-block:last-of-type {
+    margin: 0;
+  }
+}
+
+@media all and (orientation: landscape) and (max-width: 850px) {
+  #team-section .main-image-container {
+    height: 400px;
+  }
+}
+@media all and (orientation: portrait) and (max-width: 850px) {
+  #team-section .main-image-container {
+    height: 350px;
+  }
+}
+@media all and (orientation: portrait) and (max-width: 650px) {
+  #team-section .main-image-container {
+    height: 300px;
   }
 }
