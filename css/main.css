@@ -687,13 +687,12 @@ section.section {
 
   #nav ul li:last-child {
     display: inline-block;
-    width: 240px;
+    width: 260px;
     padding: 10px;
     margin-top: 1%;
   }
   #nav ul li a {
     font-size: 3rem;
-    font-weight: bold;
   }
 
   #nav.active {
@@ -711,6 +710,9 @@ section.section {
   /*      LANDING       */
   /**********************/
 
+  #landing-section {
+    padding-top: 35vh;
+  }
   #landing-section .text-container span.yellow-color {
     display: block;
   }
@@ -811,6 +813,9 @@ section.section {
 }
 
 @media all and (orientation: landscape) and (max-width: 850px) {
+  #landing-section {
+    padding-top: 25vh;
+  }
   #team-section .main-image-container {
     height: 400px;
   }
