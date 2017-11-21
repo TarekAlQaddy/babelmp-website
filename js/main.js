@@ -67,10 +67,11 @@ var team = [
 teamMembers.each(function (index) {
   $(this).on('click', function () {
     var imageUrl = 'url("' + team[index].image + '")'
-    mainImage.fadeTo(300, 0, function () {
+    mainImage.removeClass('active');
+    setTimeout(function () {
       mainImage.css({'background-image': imageUrl})
-      mainImage.fadeTo(300, 1)
-    })
+      mainImage.addClass('active');
+    }, 200)
   })
 })
 
