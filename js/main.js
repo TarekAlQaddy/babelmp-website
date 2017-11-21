@@ -12,6 +12,8 @@
 //   })
 // }
 
+
+
 $('#fullpage').onepage_scroll({
   animationTime: 600,
   pagination: false,
@@ -34,6 +36,10 @@ $('#slick').slick({
 var mainImage = $('#main-image');
 var teamContainer = $('#team-container');
 var teamMembers = $('.team-member');
+var nav = $('#nav');
+var menu = $('#hamburger-menu');
+var services = $('.service');
+var servicesBackground = $('#services-section .image');
 var team = [
   {
     image: 'media/images/amr-ismail-big.jpg'
@@ -68,6 +74,12 @@ teamMembers.each(function (index) {
   })
 })
 
+services.each(function (index) {
+  $(this).on('mouseenter touchstart', function () {
+    servicesBackground.removeClass('active');
+    $(servicesBackground[index]).addClass('active');
+  })
+})
 
 function repositionTeamMembers() {
   var containerWidth = teamContainer.width()
@@ -84,9 +96,6 @@ window.addEventListener('resize', function () {
   repositionTeamMembers()
 })
 repositionTeamMembers()
-
-var nav = $('#nav')
-var menu = $('#hamburger-menu')
 
 menu.on('click', function () {
   toggleNav()
