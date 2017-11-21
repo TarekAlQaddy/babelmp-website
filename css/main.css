@@ -1,7 +1,7 @@
 body {
   font-family: 'Lato', sans-serif;
   background: #444;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 }
 :root {
   font-size: 16px;
@@ -108,7 +108,7 @@ section.section {
   cursor: pointer;
 }
 #landing-section .play-rectangle i {
-  font-size: 6rem;
+  font-size: 90px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -166,17 +166,21 @@ section.section {
 /*      SERVICES      */
 /**********************/
 
-#services-section {
+#services-section,
+#about-section {
   display: flex;
 }
-#services-section > div {
+#services-section > div,
+#about-section > div {
   width: 50%;
   height: 100%;
 }
-#services-section .description-container {
-  padding: 0 10% 0 10%;
+#services-section .description-container,
+#about-section .about-text {
+  padding: 0 4% 0 10%;
 }
-#services-section .description-container h2 {
+#services-section .description-container h2,
+#about-section .about-text h2 {
   margin-top: 35vh;
   font-size: 7.5rem;
 }
@@ -184,7 +188,8 @@ section.section {
   font-size: 2.1rem;
   font-weight: 300;
 }
-#services-section .description-container .line-divider {
+#services-section .description-container .line-divider,
+#about-section .about-text .line-divider {
   width: 200px;
   height: 1px;
   background: #363636;
@@ -204,6 +209,11 @@ section.section {
   width: 50%;
   height: 50%;
   position: relative;
+  filter: grayscale(0.4);
+  transition: filter 0.4s;
+}
+#services-section .services-container .service-box:hover {
+  filter: grayscale(0);
 }
 #services-section .service-box .overlay {
   position: absolute;
@@ -212,13 +222,12 @@ section.section {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  opacity: 1;
-  transition: 0.4s;
+  transition: background-color 0.4s;
   padding: 20px;
 }
-/*#services-section .service-box .overlay:hover {*/
-  /*opacity: 1;*/
-/*}*/
+#services-section .service-box .overlay:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
 #services-section .service-box .overlay h2 {
   margin: 0;
   text-transform: uppercase;
@@ -245,6 +254,10 @@ section.section {
 }
 
 
+/**********************/
+/*       TEAM         */
+/**********************/
+
 #team-section {
   display: flex;
   flex-wrap: nowrap;
@@ -268,6 +281,9 @@ section.section {
   height: 50%;
   padding: 20px 0;
 }
+#team-section .lower-half .hiring {
+  padding: 20px;
+}
 #team-section .team-container {
   position: relative;
   width: 100%;
@@ -279,8 +295,9 @@ section.section {
   background: greenyellow;
   display: inline-block;
   position: relative;
-  transition: 0.4s;
+  transition: all 0.4s;
   cursor: pointer;
+  filter: grayscale(1);
 }
 #team-section .team-member .layout {
   position: absolute;
@@ -288,12 +305,11 @@ section.section {
   left: 0;
   right: 0;
   bottom: 0;
-  filter: grayscale(100%);
-  transition: 0.4s;
   opacity: 1;
 }
 #team-section .team-member:hover {
   transform: translateY(-20%);
+  filter: grayscale(0);
 }
 #team-section .team-member:hover .layout {
   opacity: 0;
@@ -332,4 +348,218 @@ section.section {
 #team-section .team-member:nth-child(8) {
   background: lightseagreen;
   z-index: 5;
+}
+
+
+/**********************/
+/*      ABOUT         */
+/**********************/
+
+#about-section .about-text {
+  width: 50%;
+}
+#about-section .about h5 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+#about-section .about .line-divider {
+  background: #ebebeb;
+}
+#about-section .reason {
+  margin-top: 25%;
+}
+#about-section .reason h5 {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+#about-section .reason h5:first-child {
+  font-weight: 700;
+}
+#about-section .about-clients {
+  padding: 30px;
+}
+#about-section h2 {
+  font-size: 5rem;
+  margin-bottom: 40px;
+}
+#about-section .about-clients .full-line {
+  width: 100%;
+  height: 2px;
+  background: #363636;
+}
+#about-section .about-clients .clients-block {
+  margin: 5% 0;
+}
+#about-section .about-clients .category {
+  font-size: 1.9rem;
+  background: #ebebeb;
+  position: relative;
+  transform: translateY(-58%);
+  display: inline-block;
+  width: 120px;
+}
+#about-section .about-clients .clients {
+  width: 100%;
+}
+#about-section .about-clients .client {
+  width: 17%;
+  height: 80px;
+  margin: 1.5% 1%;
+  display: inline-block;
+  filter: grayscale(1);
+  transition: filter 0.3s;
+}
+#about-section .about-clients .client:hover {
+  filter: grayscale(0);
+}
+#about-section .brands .client:first-child {
+  background: url("../media/images/clients/careem.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .brands .client:nth-child(2) {
+  background: url("../media/images/clients/wuzzuf.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .brands .client:nth-child(3) {
+  background: url("../media/images/clients/logoJAZ.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .brands .client:nth-child(4) {
+  background: url("../media/images/clients/forasna.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .brands .client:nth-child(5) {
+  background: url("../media/images/clients/saber.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .brands .client:nth-child(6) {
+  background: url("../media/images/clients/brimore.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .brands .client:nth-child(7) {
+  background: url("../media/images/clients/phillip.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .brands .client:nth-child(8) {
+  background: url("../media/images/clients/tomato.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .brands .client:nth-child(9) {
+  background: url("../media/images/clients/idp.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .brands .client:nth-child(10) {
+  background: url("../media/images/clients/ajyal.png") center center no-repeat;
+  background-size: contain;
+}
+
+#about-section .entities .client:first-child {
+  background: url("../media/images/clients/undp.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .entities .client:nth-child(2) {
+  background: url("../media/images/clients/Leo-alphas.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .entities .client:nth-child(3) {
+  background: url("../media/images/clients/lions.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .entities .client:nth-child(4) {
+  background: url("../media/images/clients/blue-V1.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .entities .client:nth-child(5) {
+  background: url("../media/images/clients/aisec.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .entities .client:nth-child(6) {
+  background: url("../media/images/clients/sit.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .entities .client:nth-child(7) {
+  background: url("../media/images/clients/straw.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .entities .client:nth-child(8) {
+  background: url("../media/images/clients/icealex.png") center center no-repeat;
+  background-size: contain;
+}
+
+#about-section .startups .client:first-child {
+  background: url("../media/images/clients/pimula.png") center center no-repeat;
+  background-size: contain;
+}
+#about-section .startups .client:nth-child(2) {
+  background: url("../media/images/clients/") center center no-repeat;
+  background-size: contain;
+}
+#about-section .startups .client:nth-child(3) {
+  background: url("../media/images/clients/mentos.png") center center no-repeat;
+  background-size: contain;
+}
+
+
+@media all and (max-width: 1750px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 1470px) {
+  :root {
+    font-size: 12.5px;
+  }
+
+  #nav ul li {
+    margin: 7px;
+  }
+
+  #services-section > div:first-child {
+    width: 40%;
+  }
+  #services-section > div:last-child{
+    width: 60%;
+  }
+  #services-section .description-container {
+    padding: 0 3%;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  #nav ul li {
+    margin: 0;
+  }
+
+
+  #services-section .description-container h2 {
+    font-size: 6rem;
+  }
+  #services-section .description-container h5 {
+    font-size: 1.7rem;
+  }
+  #services-section .description-container a {
+    font-size: 2rem;
+  }
+  #services-section .service-box .overlay h2 {
+    font-size: 2.8rem;
+  }
+}
+@media all and (max-width: 900px) {
+  :root {
+    font-size: 10px;
+  }
+
+  #landing-section .play-container {
+    width: 150px;
+  }
+  #landing-section .play-rectangle, #custom-next, #custom-prev {
+    width: 70px;
+    height: 70px;
+  }
+  #landing-section .play-rectangle i {
+    font-size: 50px;
+  }
+  #landing-section .play-rectangle p {
+    margin-top: 10px;
+  }
 }

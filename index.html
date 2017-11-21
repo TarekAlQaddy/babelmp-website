@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Babel Media Production</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- TODO: meta tags & favicon & CDNs-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
@@ -14,20 +16,19 @@
   </head>
   <body>
 
-
+    <nav id="nav">
+    <a href="#"><img src="media/images/logo-small.png" alt="babel media production logo"></a>
+    <ul>
+      <li><a href="">Projects</a></li>
+      <li><a href="">Services</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Team</a></li>
+      <li><a href="">Contact Us</a></li>
+      <li><a href="">Start Project</a></li>
+    </ul>
+  </nav>
     <div id="fullpage">
       <section class="section" id="landing-section">
-        <nav id="nav">
-          <a href="#"><img src="media/images/logo-small.png" alt="babel media production logo"></a>
-          <ul>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Team</a></li>
-            <li><a href="">Contact Us</a></li>
-            <li><a href="">Start Project</a></li>
-          </ul>
-        </nav>
         <div class="text-container">
           <h1 class="offwhite-color">
             Let’s make something <span class="yellow-color bold">GREAT !</span>
@@ -125,7 +126,7 @@
             <h5 class="light offwhite-color">* We are all engineers.</h5>
           </div>
           <div class="lower-half">
-            <div class="team-container">
+            <div class="team-container" id="team-container">
               <div class="team-member">
                 <div class="layout"></div>
               </div>
@@ -148,11 +149,77 @@
                 <div class="layout"></div>
               </div>
             </div>
+            <div class="hiring">
+              <h5 class="yellow-color">We are hiring!</h5>
+              <h5 class="offwhite-color">Amaze us on hr@babelmp.com</h5>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section grey-background" id="about-section">
+        <div class="about-text">
+          <div class="about">
+            <h2 class="bold yellow-color">ABOUT</h2>
+            <h5 class="offwhite-color">
+              Babel is a media production house founded in Alexandria, Egypt in 2015.
+            </h5>
+            <h5 class="offwhite-color">
+              At Babel, We strive to deliver a high-end output in a professional manner to satisfy our customers
+            </h5>
+            <div class="line-divider offwhite-background"></div>
+          </div>
+          <div class="reason offwhite-color">
+            <h5 class="bold">Reason behind "babel"</h5>
+            <h5>According to the story, a united humanity in the generations following the Great Flood, Speaking a single language and migrating eastward, comes to the land of Shinar, There they agree to build a city and a tower tall enough to reach heaven. So do we. We do our best to reach the top in our field</h5>
+          </div>
+        </div>
+        <div class="about-clients offwhite-background">
+          <h2 class="grey-color bold">Clients</h2>
+          <div class="clients-block">
+            <div class="full-line"></div>
+            <span class="category">Brands</span>
+            <div class="clients brands">
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+            </div>
+          </div>
+          <div class="clients-block">
+            <div class="full-line"></div>
+            <div class="category">Entities</div>
+            <div class="clients entities">
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+            </div>
+          </div>
+          <div class="clients-block">
+            <div class="full-line"></div>
+            <div class="category">Startups</div>
+            <div class="clients startups">
+              <div class="client"></div>
+              <div class="client"></div>
+              <div class="client"></div>
+            </div>
           </div>
         </div>
       </section>
     </div>
 
+
+    <script>//TODO: google analytics</script>
     <script src="vendor/js/jquery-3.2.1.min.js"></script>
     <script src="vendor/js/materialize.min.js"></script>
     <script src="vendor/js/jquery.onepage-scroll.min.js"></script>
