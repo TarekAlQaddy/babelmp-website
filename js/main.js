@@ -62,14 +62,26 @@ teamMembers.each(function (index) {
 function repositionTeamMembers() {
     var containerWidth = teamContainer.width()
     var imageWidth = teamMembers.first().width()
-    var leftMargin = imageWidth - ((containerWidth - imageWidth) / teamMembers.length)
+    var leftMargin = imageWidth + 4 - ((containerWidth - imageWidth) / (teamMembers.length - 1))
     teamMembers.each(function (index) {
         if (index !== 0) {
             $(this).css({ 'margin-left': -leftMargin })
         }
     })
 }
-repositionTeamMembers()
+
 window.addEventListener('resize', function () {
     repositionTeamMembers()
 })
+repositionTeamMembers()
+
+var nav = $('#nav')
+var menu = $('#hamburger-menu')
+
+menu.on('click', function () {
+    toggleNav()
+})
+function toggleNav() {
+    menu.toggleClass('active')
+    nav.toggleClass('active')
+}
