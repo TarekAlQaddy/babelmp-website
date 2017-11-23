@@ -3,12 +3,12 @@ var body = $('body');
 var mainImage = $('#main-image');
 var teamContainer = $('#team-container');
 var teamMembers = $('.team-member');
-var nav = $('#nav');
+var nav = $('#mobile-nav');
 var navUl = $('#nav-ul');
 var navLinks = $('.nav-link');
 var menu = $('#hamburger-menu');
 var services = $('.service');
-var servicesBackground = $('#services-section .image');
+var servicesBackground = $('#services .image');
 var team = [
   {
     image: 'media/images/amr-ismail-big.jpg'
@@ -88,16 +88,20 @@ navLinks.each(function (index) {
     }
     if (wait) {
       toggleNav(1)
-      setTimeout(function () {
-        console.log(link.data('link'))
-        $.fn.moveTo(linkStrings.indexOf(link.data('link')))
-      }, 1300)
+      window.location = '#' +  link.data('link')
     } else {
-      $.fn.moveTo(linkStrings.indexOf(link.data('link')))
+      $.fn.moveTo(linkStrings.indexOf(link.data('link')) + 2)
     }
   })
 })
 
+
+function scrollToSection(section) {
+  var body = $('body');
+  body.animate({
+    scrollTop: body.scrollTop() - (-$('#' + section).offset().top)
+  }, 700)
+}
 
 teamMembers.each(function (index) {
   $(this).on('click', function () {

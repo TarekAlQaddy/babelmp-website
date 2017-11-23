@@ -52,6 +52,9 @@ section.section {
 #hamburger-menu {
   display: none;
 }
+#mobile-nav {
+  display: none;
+}
 #nav {
   background: none;
   box-shadow: none;
@@ -87,29 +90,29 @@ section.section {
   transition: 0.3s ease-out;
   transform: scale(0);
 }
-#nav ul li a:hover {
+#nav ul li a:hover, #mobile-nav ul li a {
   background: none;
 }
 #nav ul li a:hover::after {
   transform: scale(1);
 }
-#nav ul li:last-child {
+#nav ul li:last-child, #mobile-nav ul li:last-child {
   border-radius: 50px;
   border: 4px solid #f1c40f;
   font-weight: bold;
   transform: translateY(-4px);
   transition: 0.3s ease-out;
 }
-#nav ul li:last-child:hover {
+#nav ul li:last-child:hover, #mobile-nav ul li:last-child:hover {
   background: #f1c40f;
 }
-#nav ul li:last-child:hover a {
+#nav ul li:last-child:hover a, #mobile-nav ul li:last-child:hover a {
   color: #363636;
 }
 #nav ul li:last-child a::after {
   display: none;
 }
-#nav ul li:last-child a {
+#nav ul li:last-child a, #mobile-nav ul li:last-child a {
   padding: 0 25px;
 }
 
@@ -118,17 +121,17 @@ section.section {
 /*      LANDING       */
 /**********************/
 
-#landing-section {
+#landing {
   padding-top: 40vh;
 }
-#landing-section .text-container {
+#landing .text-container {
   text-align: center;
 }
-#landing-section .text-container h1 {
+#landing .text-container h1 {
   font-weight: 700;
   font-size: 6rem;
 }
-#landing-section .play-container {
+#landing .play-container {
   width: 200px;
   position: absolute;
   bottom: 20px;
@@ -136,7 +139,7 @@ section.section {
   transform: translateX(-50%);
   text-align: center;
 }
-#landing-section .play-rectangle, #custom-next, #custom-prev {
+#landing .play-rectangle, #custom-next, #custom-prev {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -145,14 +148,14 @@ section.section {
   position: relative;
   cursor: pointer;
 }
-#landing-section .play-rectangle i {
+#landing .play-rectangle i {
   font-size: 90px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#landing-section .play-container p {
+#landing .play-container p {
   font-size: 2rem;
   margin: 20px 0 0 0;
 }
@@ -162,7 +165,7 @@ section.section {
 /*      PROJECTS      */
 /**********************/
 
-#projects-section .slide {
+#projects .slide {
   display: flex;
   flex-wrap: wrap;
 }
@@ -194,7 +197,7 @@ section.section {
   transform: rotate(180deg) translate(50%, 50%);
 }
 
-#projects-section .box {
+#projects .box {
   width: 100%;
   height: 50vh;
 }
@@ -204,47 +207,47 @@ section.section {
 /*      SERVICES      */
 /**********************/
 
-#services-section {
+#services {
   position: relative;
 }
 
-#services-section .background-images {
+#services .background-images {
   width: 100%;
   height: 100%;
 }
-#services-section .background-images .image,
-#services-section .services-list {
+#services .background-images .image,
+#services .services-list {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
 }
-#services-section .background-images .image {
+#services .background-images .image {
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
   z-index: 3;
 }
-#services-section .background-images .image.active {
+#services .background-images .image.active {
   opacity: 1;
 }
-#services-section .background-images .image:first-child {
+#services .background-images .image:first-child {
   background: url("../media/images/team-big.jpg") center center no-repeat;
   background-size: cover;
 }
-#services-section .background-images .image:nth-child(2) {
+#services .background-images .image:nth-child(2) {
   background: url("../media/images/services-media.jpg") center center no-repeat;
   background-size: cover;
 }
-#services-section .background-images .image:nth-child(3) {
+#services .background-images .image:nth-child(3) {
   background: url("../media/images/services-web.jpg") center center no-repeat;
   background-size: cover;
 }
-#services-section .background-images .image:nth-child(4) {
+#services .background-images .image:nth-child(4) {
   background: url("../media/images/logo-big.png") center center no-repeat;
   background-size: cover;
 }
-#services-section .services-list {
+#services .services-list {
   z-index: 4;
   display: flex;
   flex-direction: row;
@@ -252,7 +255,7 @@ section.section {
 /*   background-color: rgba(0, 0, 0, 0.5); */
   cursor: pointer;
 }
-#services-section .services-list .service {
+#services .services-list .service {
   height: 100%;
   width: 25%;
   padding: 20px;
@@ -263,17 +266,17 @@ section.section {
   transition: background-color 0.4s ease-out;
   background-color: rgba(0, 0, 0, 0.8);
 }
-#services-section .services-list .service h3 {
+#services .services-list .service h3 {
   text-align: center;
   transition: transform 0.4s ease-out;
 }
-#services-section .services-list .service:hover {
+#services .services-list .service:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
-#services-section .services-list .service:hover h3 {
+#services .services-list .service:hover h3 {
   transform: translateY(-30px);
 }
-#services-section .services-text {
+#services .services-text {
   position: absolute;
   left: 50%;
   top: 0;
@@ -281,7 +284,7 @@ section.section {
   z-index: 5;
   text-align: center;
 }
-#services-section .services-text a {
+#services .services-text a {
   display: inline-block;
   font-size: 2rem;
   padding: 3px 25px;
@@ -295,44 +298,44 @@ section.section {
 /*        TEAM        */
 /**********************/
 
-#team-section {
+#team {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row-reverse;
 }
-#team-section .main-image-container {
+#team .main-image-container {
   width: 70%;
   background: url("../media/images/team-big.jpg") center center no-repeat;
   background-size: cover;
   opacity: 0;
   transition: opacity 0.2s ease-out;
 }
-#team-section .main-image-container.active {
+#team .main-image-container.active {
   opacity: 1;
 }
-#team-section .title-container {
+#team .title-container {
   width: 30%;
 }
-#team-section .title-container .upper-half {
+#team .title-container .upper-half {
   padding: 20px;
   height: 50%;
 }
-#team-section .title-container .upper-half h2 {
+#team .title-container .upper-half h2 {
   font-size: 8rem;
 }
-#team-section .title-container .lower-half {
+#team .title-container .lower-half {
   height: 50%;
   padding: 20px 0;
 }
-#team-section .lower-half .hiring {
+#team .lower-half .hiring {
   padding: 20px;
 }
-#team-section .team-container {
+#team .team-container {
   position: relative;
   width: 100%;
   height: 50%;
 }
-#team-section .team-member {
+#team .team-member {
   width: 160px;
   height: 160px;
   background: greenyellow;
@@ -342,7 +345,7 @@ section.section {
   cursor: pointer;
   filter: grayscale(1);
 }
-#team-section .team-member .layout {
+#team .team-member .layout {
   position: absolute;
   top: 0;
   left: 0;
@@ -350,45 +353,45 @@ section.section {
   bottom: 0;
   opacity: 1;
 }
-#team-section .team-member:hover {
+#team .team-member:hover {
   transform: translateY(-20%);
   filter: grayscale(0);
 }
-#team-section .team-member:hover .layout {
+#team .team-member:hover .layout {
   opacity: 0;
 }
-#team-section .team-member:not(:first-child) {
+#team .team-member:not(:first-child) {
   margin-left: -18%;
 }
-#team-section .team-member:first-child {
+#team .team-member:first-child {
   background: black;
   z-index: 12;
 }
-#team-section .team-member:nth-child(2) {
+#team .team-member:nth-child(2) {
   background: blue;
   z-index: 11;
 }
-#team-section .team-member:nth-child(3) {
+#team .team-member:nth-child(3) {
   background: red;
   z-index: 10;
 }
-#team-section .team-member:nth-child(4) {
+#team .team-member:nth-child(4) {
   background: yellow;
   z-index: 9;
 }
-#team-section .team-member:nth-child(5) {
+#team .team-member:nth-child(5) {
   background: orange;
   z-index: 8;
 }
-#team-section .team-member:nth-child(6) {
+#team .team-member:nth-child(6) {
   background: darkolivegreen;
   z-index: 7;
 }
-#team-section .team-member:nth-child(7) {
+#team .team-member:nth-child(7) {
   background: black;
   z-index: 6;
 }
-#team-section .team-member:nth-child(8) {
+#team .team-member:nth-child(8) {
   background: lightseagreen;
   z-index: 5;
 }
@@ -397,60 +400,60 @@ section.section {
 /**********************/
 /*      ABOUT         */
 /**********************/
-#about-section {
+#about {
   display: flex;
 }
-#about-section > div {
+#about > div {
   width: 50%;
   height: 100%;
 }
-#about-section .about-text {
+#about .about-text {
   width: 50%;
   padding: 0 4% 0 10%;
 }
-#about-section .about-text h2 {
+#about .about-text h2 {
   margin-top: 35vh;
   font-size: 7.5rem;
 }
-#about-section .about h5 {
+#about .about h5 {
   font-size: 1.5rem;
   font-weight: 300;
 }
-#about-section .about-text .line-divider {
+#about .about-text .line-divider {
   width: 200px;
   height: 1px;
   background: #363636;
   margin: 5px 0 35px 0;
 }
-#about-section .about .line-divider {
+#about .about .line-divider {
   background: #ebebeb;
 }
-#about-section .reason {
+#about .reason {
   margin-top: 25%;
 }
-#about-section .reason h5 {
+#about .reason h5 {
   font-size: 1.4rem;
   font-weight: 300;
 }
-#about-section .reason h5:first-child {
+#about .reason h5:first-child {
   font-weight: 700;
 }
-#about-section .about-clients {
+#about .about-clients {
   padding: 30px;
 }
-#about-section h2 {
+#about h2 {
   font-size: 5rem;
   margin-bottom: 40px;
 }
-#about-section .about-clients .full-line {
+#about .about-clients .full-line {
   width: 100%;
   height: 2px;
   background: #363636;
 }
-#about-section .about-clients .clients-block {
+#about .about-clients .clients-block {
   margin: 5% 0;
 }
-#about-section .about-clients .category {
+#about .about-clients .category {
   font-size: 1.9rem;
   background: #ebebeb;
   position: relative;
@@ -458,10 +461,10 @@ section.section {
   display: inline-block;
   width: 120px;
 }
-#about-section .about-clients .clients {
+#about .about-clients .clients {
   width: 100%;
 }
-#about-section .about-clients .client {
+#about .about-clients .client {
   width: 17%;
   height: 80px;
   margin: 1.5% 1%;
@@ -469,92 +472,92 @@ section.section {
   filter: grayscale(1);
   transition: filter 0.3s;
 }
-#about-section .about-clients .client:hover {
+#about .about-clients .client:hover {
   filter: grayscale(0);
 }
-#about-section .brands .client:first-child {
+#about .brands .client:first-child {
   background: url("../media/images/clients/careem.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .brands .client:nth-child(2) {
+#about .brands .client:nth-child(2) {
   background: url("../media/images/clients/wuzzuf.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .brands .client:nth-child(3) {
+#about .brands .client:nth-child(3) {
   background: url("../media/images/clients/logoJAZ.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .brands .client:nth-child(4) {
+#about .brands .client:nth-child(4) {
   background: url("../media/images/clients/forasna.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .brands .client:nth-child(5) {
+#about .brands .client:nth-child(5) {
   background: url("../media/images/clients/saber.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .brands .client:nth-child(6) {
+#about .brands .client:nth-child(6) {
   background: url("../media/images/clients/brimore.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .brands .client:nth-child(7) {
+#about .brands .client:nth-child(7) {
   background: url("../media/images/clients/phillip.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .brands .client:nth-child(8) {
+#about .brands .client:nth-child(8) {
   background: url("../media/images/clients/tomato.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .brands .client:nth-child(9) {
+#about .brands .client:nth-child(9) {
   background: url("../media/images/clients/idp.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .brands .client:nth-child(10) {
+#about .brands .client:nth-child(10) {
   background: url("../media/images/clients/ajyal.png") center center no-repeat;
   background-size: contain;
 }
 
-#about-section .entities .client:first-child {
+#about .entities .client:first-child {
   background: url("../media/images/clients/undp.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .entities .client:nth-child(2) {
+#about .entities .client:nth-child(2) {
   background: url("../media/images/clients/Leo-alphas.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .entities .client:nth-child(3) {
+#about .entities .client:nth-child(3) {
   background: url("../media/images/clients/lions.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .entities .client:nth-child(4) {
+#about .entities .client:nth-child(4) {
   background: url("../media/images/clients/blue-V1.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .entities .client:nth-child(5) {
+#about .entities .client:nth-child(5) {
   background: url("../media/images/clients/aisec.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .entities .client:nth-child(6) {
+#about .entities .client:nth-child(6) {
   background: url("../media/images/clients/sit.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .entities .client:nth-child(7) {
+#about .entities .client:nth-child(7) {
   background: url("../media/images/clients/straw.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .entities .client:nth-child(8) {
+#about .entities .client:nth-child(8) {
   background: url("../media/images/clients/icealex.png") center center no-repeat;
   background-size: contain;
 }
 
-#about-section .startups .client:first-child {
+#about .startups .client:first-child {
   background: url("../media/images/clients/pimula.png") center center no-repeat;
   background-size: contain;
 }
-#about-section .startups .client:nth-child(2) {
+#about .startups .client:nth-child(2) {
   background: url("../media/images/clients/") center center no-repeat;
   background-size: contain;
 }
-#about-section .startups .client:nth-child(3) {
+#about .startups .client:nth-child(3) {
   background: url("../media/images/clients/mentos.png") center center no-repeat;
   background-size: contain;
 }
@@ -574,15 +577,15 @@ section.section {
     margin: 7px;
   }
 
-  #services-section .description-container {
+  #services .description-container {
     padding: 0 3%;
   }
 
 
-  #about-section .about-clients .client {
+  #about .about-clients .client {
     height: 65px;
   }
-  #about-section .about-clients .category {
+  #about .about-clients .category {
     width: 100px;
   }
 }
@@ -595,24 +598,24 @@ section.section {
     font-size: 1.7rem;
   }
 
-  #about-section .about-text h2 {
+  #about .about-text h2 {
     font-size: 6rem;
   }
 
 
-  #team-section .team-member {
+  #team .team-member {
     width: 120px;
     height: 120px;
   }
 
 
-  #about-section .about h5 {
+  #about .about h5 {
     font-size: 1.2rem;
   }
-  #about-section .reason h5 {
+  #about .reason h5 {
     font-size: 1.1rem;
   }
-  #about-section .about-clients .client {
+  #about .about-clients .client {
     height: 45px;
   }
 }
@@ -621,17 +624,17 @@ section.section {
     font-size: 10px;
   }
 
-  #landing-section .play-container {
+  #landing .play-container {
     width: 150px;
   }
-  #landing-section .play-rectangle, #custom-next, #custom-prev {
+  #landing .play-rectangle, #custom-next, #custom-prev {
     width: 70px;
     height: 70px;
   }
-  #landing-section .play-rectangle i {
+  #landing .play-rectangle i {
     font-size: 50px;
   }
-  #landing-section .play-rectangle p {
+  #landing .play-rectangle p {
     margin-top: 10px;
   }
 }
@@ -679,8 +682,12 @@ section.section {
     opacity: 0;
   }
   #nav {
+    display: none;
+  }
+  #mobile-nav {
     display: block;
     position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 100vw;
@@ -690,23 +697,23 @@ section.section {
     transition: transform 0.5s cubic-bezier(1,.01,.81,.73);
     transform: translateX(100%);
   }
-  #nav > a {
+  #mobile-nav > a {
     position: absolute;
     left: 20px;
     top: 20px;
     opacity: 0;
     transition: opacity 0.3s 0.5s;
   }
-  #nav > a img {
+  #mobile-nav > a img {
     width: 90px;
   }
-  #nav ul {
+  #mobile-nav ul {
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  #nav ul li {
+  #mobile-nav ul li {
     float: none;
     display: block;
     text-align: center;
@@ -715,42 +722,41 @@ section.section {
     transform: translateY(70%);
   }
 
-  #nav ul li:first-child {
-    transition: all 0.3s ease-in-out;
+  #mobile-nav ul li:first-child {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
-  #nav ul li:nth-child(2) {
-    transition: all 0.3s 0.1s ease-in-out;
+  #mobile-nav ul li:nth-child(2) {
+    transition: opacity 0.3s 0.1s ease-in-out, transform 0.3s 0.1s ease-in-out;
   }
-  #nav ul li:nth-child(3) {
-    transition: all 0.3s 0.2s ease-in-out;
+  #mobile-nav ul li:nth-child(3) {
+    transition: opacity 0.3s 0.2s ease-in-out, transform 0.3s 0.2s ease-in-out;
   }
-  #nav ul li:nth-child(4) {
-    transition: all 0.3s 0.3s ease-in-out;
+  #mobile-nav ul li:nth-child(4) {
+    transition: opacity 0.3s 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
   }
-  #nav ul li:nth-child(5) {
-    transition: all 0.3s 0.4s ease-in-out;
+  #mobile-nav ul li:nth-child(5) {
+    transition: opacity 0.3s 0.4s ease-in-out, transform 0.3s 0.4s ease-in-out;
   }
-  #nav ul li:nth-child(6) {
-    transition: all 0.3s 0.5s ease-in-out;
+  #mobile-nav ul li:nth-child(6) {
+    transition: opacity 0.3s 0.5s ease-in-out, transform 0.3s 0.5s ease-in-out, background-color 0.3s ease-in-out;
   }
 
-  #nav ul li:last-child {
+  #mobile-nav ul li:last-child {
     display: inline-block;
     width: 300px;
-    padding: 10px;
     margin-top: 1%;
   }
-  #nav ul li a {
+  #mobile-nav ul li a {
     font-size: 3.6rem;
   }
 
-  #nav.active {
+  #mobile-nav.active {
     transform: translateX(0);
   }
-  #nav.active > a {
+  #mobile-nav.active > a {
     opacity: 1;
   }
-  #nav ul.active li {
+  #mobile-nav ul.active li {
     opacity: 1;
     transform: translateY(0);
   }
@@ -760,13 +766,13 @@ section.section {
   /*      LANDING       */
   /**********************/
 
-  #landing-section {
+  #landing {
     padding-top: 35vh;
   }
-  #landing-section .text-container h1 {
+  #landing .text-container h1 {
     font-size: 6.5rem;
   }
-  #landing-section .text-container span.yellow-color {
+  #landing .text-container span.yellow-color {
     display: block;
   }
 
@@ -775,28 +781,28 @@ section.section {
   /*        TEAM        */
   /**********************/
 
-  #team-section {
+  #team {
     display: block;
     height: auto;
     width: 100%;
     text-align: center;
   }
-  #team-section .main-image-container {
+  #team .main-image-container {
     width: 100%;
   }
-  #team-section .title-container {
+  #team .title-container {
     width: 100%;
   }
-  #team-section .title-container .upper-half {
+  #team .title-container .upper-half {
     padding: 30px;
   }
-  #team-section .upper-half h5 {
+  #team .upper-half h5 {
     font-size: 3rem;
   }
-  #team-section .upper-half h5:last-child {
+  #team .upper-half h5:last-child {
     font-size: 2.5rem;
   }
-  #team-section .lower-half .hiring h5 {
+  #team .lower-half .hiring h5 {
     font-size: 2rem;
   }
 
@@ -805,16 +811,16 @@ section.section {
   /*      SERVICES      */
   /**********************/
   
-  #services-section .services-text {
+  #services .services-text {
     display: none;
   }
-  #services-section .services-list {
+  #services .services-list {
     flex-direction: column;
   }
-  #services-section .services-list .service {
+  #services .services-list .service {
     width: 100%;
   }
-  #services-section .services-list .service h3 {
+  #services .services-list .service h3 {
     font-size: 5.4rem;
   }
   
@@ -823,91 +829,97 @@ section.section {
   /**********************/
 
 
-  #about-section {
+  #about {
     display: block;
     height: auto;
   }
-  #about-section .about-text,
-  #about-section .about-clients {
+  #about .about-text,
+  #about .about-clients {
     width: 100%;
   }
-  #about-section .about-text {
+  #about .about-text {
     text-align: center;
     padding: 30px;
     height: auto;
   }
-  #about-section .about-text h2 {
+  #about .about-text h2 {
     font-size: 8rem;
     margin: 20px 0;
   }
-  #about-section .about-text h5 {
+  #about .about-text h5 {
     font-size: 3rem;
   }
-  #about-section .about-text .line-divider {
+  #about .about-text .line-divider {
     display: block;
     margin: 10px auto;
   }
-  #about-section .about-text .reason {
+  #about .about-text .reason {
     margin-top: 35px;
   }
-  #about-section .about-text .reason h5 {
+  #about .about-text .reason h5 {
     font-size: 2.5rem;
   }
-  #about-section .about-clients h2 {
+  #about .about-clients h2 {
     text-align: center;
   }
-  #about-section .about-clients h2 {
+  #about .about-clients h2 {
     font-size: 8rem;
     text-transform: uppercase;
   }
-  #about-section .clients-block .category {
+  #about .clients-block .category {
     width: 140px;
     font-size: 3rem;
     display: block;
     margin: 0 auto;
     text-align: center;
   }
-  #about-section .clients-block {
+  #about .clients-block {
     text-align: center;
   }
-  #about-section .about-clients .client {
+  #about .about-clients .client {
     width: 25%;
     margin: 3%;
   }
-  #about-section .about-clients .clients-block {
+  #about .about-clients .clients-block {
     margin: 10% 0;
   }
-  #about-section .about-clients .clients-block:last-of-type {
+  #about .about-clients .clients-block:last-of-type {
     margin: 0;
   }
 }
 
 @media all and (orientation: landscape) and (max-width: 850px) {
-  #nav ul li {
+  #mobile-nav ul li {
     margin: 2% 0;
   }
-  #landing-section {
+  #landing {
     padding-top: 25vh;
   }
-  #team-section .main-image-container {
+  #team .main-image-container {
     height: 400px;
   }
 }
 @media all and (orientation: portrait) and (max-width: 850px) {
-  #team-section .main-image-container {
+  #team .main-image-container {
     height: 350px;
   }
 }
 @media all and (orientation: portrait) and (max-width: 650px) {
-  #team-section .main-image-container {
+  #mobile-nav ul li {
+    margin: 2% 0;
+  }
+  #team .main-image-container {
     height: 300px;
   }
-  #services-section .services-list .service h3 {
+  #services .services-list .service h3 {
     font-size: 4.5rem;
   }
 }
 @media all and (orientation: portrait) and (max-width: 450px) {
-  #about-section .about-clients h2 {
+  #mobile-nav ul li a {
+    font-size: 3rem;
+  }
+  #about .about-clients h2 {
     font-size: 7rem;
   }
 }
