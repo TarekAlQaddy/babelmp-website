@@ -36,10 +36,11 @@ var linkStrings = ['projects', 'services', 'about', 'team', 'contact-us'];
 var navFlag = 0;
 
 $('#fullpage').onepage_scroll({
-  animationTime: 600,
+  animationTime: 700,
   pagination: false,
   responsiveFallback: BREAK_POINT,
-  loop: false
+  loop: false,
+  easing: 'cubic-bezier(0.86, 0, 0.07, 1)'
 })
 $('#slick').slick({
   prevArrow: $('#custom-prev'),
@@ -124,3 +125,12 @@ window.addEventListener('resize', function () {
   repositionTeamMembers()
 })
 repositionTeamMembers()
+
+$('#iframe-modal').iziModal({
+  iframe: true,
+  iframeHeight: 400,
+  iframeURL: "https://www.youtube.com/embed/KYuylu6PVsI?autoplay=1?rel=0&amp;controls=0&amp;showinfo=0"
+});
+$('#open-video').on('click', function () {
+  $('#iframe-modal').iziModal('open')
+})
