@@ -56,7 +56,6 @@ $('#slick').slick({
 })
 
 
-
 menu.on('click', function () {
   toggleNav(navFlag)
 })
@@ -79,14 +78,10 @@ function toggleNav(isOpened) {
   }
 }
 
-navLinks.each(function (index) {
+navLinks.each(function () {
   var link = $(this)
   link.on('click', function () {
-    var wait = false
     if (window.innerWidth <= BREAK_POINT) {
-      wait = true
-    }
-    if (wait) {
       toggleNav(1)
       window.location = '#' +  link.data('link')
     } else {
@@ -95,13 +90,6 @@ navLinks.each(function (index) {
   })
 })
 
-
-function scrollToSection(section) {
-  var body = $('body');
-  body.animate({
-    scrollTop: body.scrollTop() - (-$('#' + section).offset().top)
-  }, 700)
-}
 
 teamMembers.each(function (index) {
   $(this).on('click', function () {

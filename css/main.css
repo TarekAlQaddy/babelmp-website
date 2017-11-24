@@ -96,23 +96,31 @@ section.section {
 #nav ul li a:hover::after {
   transform: scale(1);
 }
-#nav ul li:last-child, #mobile-nav ul li:last-child {
+#nav ul li:last-child,
+#mobile-nav ul li:last-child,
+#services .services-text a {
   border-radius: 50px;
   border: 4px solid #f1c40f;
   font-weight: bold;
   transform: translateY(-4px);
   transition: 0.3s ease-out;
 }
-#nav ul li:last-child:hover, #mobile-nav ul li:last-child:hover {
+#nav ul li:last-child:hover,
+#mobile-nav ul li:last-child:hover,
+#services .services-text a:hover {
   background: #f1c40f;
 }
-#nav ul li:last-child:hover a, #mobile-nav ul li:last-child:hover a {
+#nav ul li:last-child:hover a,
+#mobile-nav ul li:last-child:hover a,
+#services .services-text a:hover {
   color: #363636;
 }
 #nav ul li:last-child a::after {
   display: none;
 }
-#nav ul li:last-child a, #mobile-nav ul li:last-child a {
+#nav ul li:last-child a,
+#mobile-nav ul li:last-child a,
+#services .services-text a {
   padding: 0 25px;
 }
 
@@ -147,6 +155,17 @@ section.section {
   margin: 0 auto;
   position: relative;
   cursor: pointer;
+  transition: 0.3s ease-out;
+}
+#landing .play-container .play-rectangle:hover,
+#custom-next:hover,
+#custom-prev:hover {
+  background: #f1c40f;
+}
+#landing .play-container .play-rectangle:hover i,
+#custom-next:hover i,
+#custom-prev:hover i{
+  color: #363636;
 }
 #landing .play-rectangle i {
   font-size: 90px;
@@ -200,6 +219,60 @@ section.section {
 #projects .box {
   width: 100%;
   height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+#projects .box-background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transition: all 1s ease-out;
+  filter: grayscale(1);
+}
+#projects .box-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  display: flex;
+  justify-content: center;
+}
+#projects .box-foreground .description {
+  text-align: center;
+  color: #ebebeb;
+  align-self: center;
+}
+#projects .box-foreground .description h5 {
+  font-size: 6rem;
+  transition: all 0.6s 0.3s cubic-bezier(.35,.76,.34,1);
+  opacity: 0;
+  transform: translateY(50%);
+}
+#projects .box-foreground .description h6 {
+  font-size: 2rem;
+  transition: all 0.6s 0.5s cubic-bezier(.35,.76,.34,1);
+  opacity: 0;
+  transform: translateY(100%) translateX(25%);
+}
+#projects .box:hover .box-background {
+  transform: scale(1.2);
+  filter: grayscale(0);
+}
+#projects .box:hover .box-foreground {
+  opacity: 1;
+}
+#projects .box:hover .description h5 {
+  transform: translateY(0);
+  opacity: 1;
+}
+#projects .box:hover .description h6 {
+  transform: translateY(0) translateX(25%);
+  opacity: 1;
 }
 
 
@@ -285,12 +358,9 @@ section.section {
   text-align: center;
 }
 #services .services-text a {
-  display: inline-block;
   font-size: 2rem;
-  padding: 3px 25px;
-  border: 3px solid #f1c40f;
-  border-radius: 50px;
-  margin-top: 5px;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 
