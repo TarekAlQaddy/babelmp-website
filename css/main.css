@@ -138,6 +138,24 @@ section.section {
   height: 100%;
   left: 0;
   top: 0;
+  z-index: -10;
+  overflow: hidden;
+}
+#landing .background-video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+#landing .background-video .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 #landing .text-container {
   text-align: center;
@@ -680,6 +698,7 @@ section.section {
   background-color: #1a1a1a;
   text-align: center;
   padding-top: 5%;
+  position: relative;
 }
 #contact-us .lower-half h5 {
   font-size: 3rem;
@@ -920,7 +939,7 @@ section.section {
   /**********************/
 
   #landing {
-    padding-top: 35vh;
+    padding-top: 30vh;
   }
   #landing .text-container h1 {
     font-size: 6.5rem;
@@ -1045,6 +1064,15 @@ section.section {
   /*     CONTACT US     */
   /**********************/
 
+  #contact-us {
+    height: auto;
+  }
+  #contact-us > div {
+    height: 350px;
+  }
+  #contact-us .lower-half {
+
+  }
   #contact-us .upper-half h2 {
     left: 0;
     width: 100%;
@@ -1082,7 +1110,7 @@ section.section {
     height: 300px;
   }
   #services .services-list .service h3 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
   #contact-us .upper-half h2 {
     font-size: 6.5rem;
@@ -1096,11 +1124,18 @@ section.section {
   }
 }
 @media all and (orientation: portrait) and (max-width: 450px) {
+  #landing {
+    padding-top: 10vh;
+  }
   #mobile-nav ul li a {
     font-size: 3rem;
   }
   #about .about-clients h2 {
     font-size: 7rem;
+  }
+  #contact-us .upper-half h2 {
+    font-size: 5.5rem;
+    bottom: -1.1rem;
   }
 }
 
