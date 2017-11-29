@@ -1,5 +1,5 @@
 body {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   background: #444;
 }
 h1, h2, h3 {
@@ -338,11 +338,11 @@ section.section {
   background-size: cover;
 }
 #services .background-images .image:nth-child(3) {
-  background: url("../media/images/services/media-coverage.jpg") center center no-repeat;
+  background: url("../media/images/services/video-production.jpg") center center no-repeat;
   background-size: cover;
 }
 #services .background-images .image:nth-child(4) {
-  background: url("../media/images/services/video-production.jpg") center center no-repeat;
+  background: url("../media/images/services/media-coverage.jpg") center center no-repeat;
   background-size: cover;
 }
 #services .services-list {
@@ -364,15 +364,31 @@ section.section {
   transition: background-color 0.4s ease-out;
   background-color: rgba(0, 0, 0, 0.8);
 }
+#services .services-list .description-container {
+  transform: translateY(40%);
+  transition: transform 0.4s;
+  height: 475px;
+}
+#services .services-list .service:hover .description-container {
+  transform: translateY(30%);
+}
+#services .services-list .service:hover ul {
+  transform: translateY(0);
+  opacity: 1;
+}
 #services .services-list .service h3 {
-  text-align: center;
-  transition: transform 0.4s ease-out;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+#services .services-list .service ul {
+  font-size: 1.7rem;
+  margin-top: 0;
+  transform: translateY(15%);
+  opacity: 0;
+  transition: all 0.4s ease-out;
 }
 #services .services-list .service:hover {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-#services .services-list .service:hover h3 {
-  transform: translateY(-30px);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 #services .services-text {
   position: absolute;
@@ -400,6 +416,7 @@ section.section {
 }
 #team .main-image-container {
   width: 70%;
+  position: relative;
   background: url("../media/images/team/team.jpg") center center no-repeat;
   background-size: cover;
   opacity: 0;
@@ -407,6 +424,36 @@ section.section {
 }
 #team .main-image-container.active {
   opacity: 1;
+}
+#team .main-image-container footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.5);
+}
+#team .main-image-container ul {
+  margin: 0;
+}
+#team .main-image-container ul li {
+  display: inline-block;
+  margin: 0 5px;
+}
+#team .main-image-container ul li img {
+  width: 40px;
+  height: 40px;
+}
+#team .main-image-container footer h6 {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  line-height: 40px;
 }
 #team .title-container {
   width: 30%;
@@ -439,6 +486,11 @@ section.section {
   transition: all 0.4s;
   cursor: pointer;
   filter: grayscale(1);
+  box-shadow: 16px 8px 24px 2px rgba(0,0,0,0.14), 6px 3px 30px 5px rgba(0,0,0,0.12), 8px 3px 10px -5px rgba(0,0,0,0.3);
+  opacity: 0;
+}
+#team .team-member.active {
+  opacity: 1;
 }
 #team .team-member .layout {
   position: absolute;
@@ -603,7 +655,7 @@ section.section {
   background-size: contain;
 }
 #about .brands .client:nth-child(8) {
-  background: url("../media/images/clients/tomato.png") center center no-repeat;
+  background: url("../media/images/clients/mdaaen.png") center center no-repeat;
   background-size: contain;
 }
 #about .brands .client:nth-child(9) {
@@ -760,6 +812,10 @@ section.section {
   #about .about-clients .category {
     width: 100px;
   }
+
+  #team .main-image-container footer h6 {
+    font-size: 2.2rem;
+  }
 }
 
 @media all and (max-width: 1200px) {
@@ -808,6 +864,10 @@ section.section {
   }
   #landing .play-rectangle p {
     margin-top: 10px;
+  }
+
+  #team .main-image-container footer h6 {
+    font-size: 1.8rem;
   }
 }
 
@@ -994,7 +1054,22 @@ section.section {
   }
   #services .services-list .service h3 {
     font-size: 5.4rem;
+    text-align: center;
   }
+  #services .services-list .service .description-container {
+    transform: none;
+    transition: none;
+    height: auto;
+  }
+  #services .services-list .service:hover .description-container {
+    transform: none;
+  }
+  #services .services-list .service .description-container ul {
+    display: none;
+    transform: none;
+    transition: none;
+  }
+
   
   /**********************/
   /*       ABOUT        */
@@ -1121,6 +1196,20 @@ section.section {
     text-align: center;
     padding: 15px;
     margin: 30px 0;
+  }
+  #team .main-image-container footer {
+    height: 40px;
+  }
+  #team .main-image-container footer h6 {
+    line-height: 20px;
+    font-size: 1.5rem;
+  }
+  #team .main-image-container footer ul li {
+    margin: 0 2px;
+  }
+  #team .main-image-container footer ul li img {
+    width: 25px;
+    height: 25px;
   }
 }
 @media all and (orientation: portrait) and (max-width: 450px) {
