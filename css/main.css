@@ -54,47 +54,55 @@ section.section {
 /*     PRELOADER      */
 /**********************/
 
-/*#preloader {*/
-  /*position: fixed;*/
-  /*z-index: 9999;*/
-  /*top: 0;*/
-  /*right: 0;*/
-  /*bottom: 0;*/
-  /*left: 0;*/
-  /*background-color: #363636;*/
-/*}*/
+#preloader {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #363636;
+}
 
-/*#preloader img {*/
-  /*position: absolute;*/
-  /*top: 50%;*/
-  /*left: 50%;*/
-  /*-webkit-transform: translate(-50%, -50%);*/
-  /*transform: translate(-50%, -50%);*/
-  /*-webkit-animation: preloader-animation 1.5s forwards infinite;*/
-  /*animation: preloader-animation 1.5s forwards infinite;*/
-/*}*/
-/*@-webkit-keyframes preloader-animation {*/
-  /*0% {*/
-    /*opacity: 0;*/
-  /*}*/
-  /*30% {*/
-    /*opacity: 1;*/
-  /*}*/
-  /*100% {*/
-    /*opacity: 0;*/
-  /*}*/
-/*}*/
-/*@keyframes preloader-animation {*/
-  /*0% {*/
-    /*opacity: 0;*/
-  /*}*/
-  /*30% {*/
-    /*opacity: 1;*/
-  /*}*/
-  /*100% {*/
-    /*opacity: 0;*/
-  /*}*/
-/*}*/
+#preloader img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+  opacity: 1;
+  -webkit-animation: preloader-animation 1.5s forwards infinite;
+  animation: preloader-animation 1.5s forwards infinite;
+}
+#preloader img.scale {
+  -webkit-transform: translate(-50%, -50%) scale(2.5);
+  transform: translate(-50%, -50%) scale(2.5);
+  opacity: 0;
+}
+@-webkit-keyframes preloader-animation {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes preloader-animation {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 
 /**********************/
@@ -1152,6 +1160,8 @@ section.section {
     display: flex;
     flex-direction: column;
     opacity: 0;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
     -webkit-transition: opacity 0.3s 1s;
     transition: opacity 0.3s 1s;
   }

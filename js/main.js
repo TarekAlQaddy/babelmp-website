@@ -1,5 +1,7 @@
 var BREAK_POINT = 850
 var body = $('body');
+var preloader = $('#preloader');
+var preloaderOmg = $('preloader-img');
 var mainImage = $('#main-image');
 var backVideo = $('#background-video');
 var memberEmail = $('#team-member-email');
@@ -228,3 +230,6 @@ $('#open-video').on('click', function () {
   $('#iframe-modal').iziModal('open')
 });
 
+window.addEventListener('load', function () {
+  preloader.fadeOut(500);
+})
