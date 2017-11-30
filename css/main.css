@@ -71,6 +71,9 @@ section.section {
   top: 0;
   left: 0;
 }
+#nav > a > img {
+  width: 90px;
+}
 #nav ul li {
   margin: 10px;
   position: relative;
@@ -1337,6 +1340,14 @@ section.section {
     font-size: 5.5rem;
     bottom: -1.1rem;
   }
+
+  #projects .box-foreground .description h5 {
+    font-size: 4.5rem;
+  }
+  #projects .box-foreground .description h6 {
+    font-size: 1.5rem;
+  }
+
 }
 
 
