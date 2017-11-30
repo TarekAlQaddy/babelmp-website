@@ -35,9 +35,6 @@ h4, h5, h6 {
 .light {
   font-weight: 300;
 }
-.extra-bold {
-  font-weight: 900;
-}
 
 section.section {
   height: 100vh;
@@ -60,6 +57,7 @@ section.section {
 }
 #nav {
   background: none;
+  -webkit-box-shadow: none;
   box-shadow: none;
   height: 120px;
   padding: 20px 40px;
@@ -82,7 +80,7 @@ section.section {
 
 }
 #nav ul li a {
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   color: #ebebeb;
 }
 #nav ul li a::after {
@@ -400,6 +398,8 @@ section.section {
   -webkit-transition: background-color 0.4s ease-out;
   transition: background-color 0.4s ease-out;
   background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 3;
 }
 #services .services-list .description-container {
   -webkit-transform: translateY(40%);
@@ -418,11 +418,11 @@ section.section {
   opacity: 1;
 }
 #services .services-list .service h3 {
-  font-size: 3rem;
+  font-size: 2.7rem;
   margin-bottom: 10px;
 }
 #services .services-list .service ul {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   margin-top: 0;
   -webkit-transform: translateY(15%);
   transform: translateY(15%);
@@ -533,6 +533,7 @@ section.section {
   cursor: pointer;
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
+  -webkit-box-shadow: 16px 8px 24px 2px rgba(0,0,0,0.14), 6px 3px 30px 5px rgba(0,0,0,0.12), 8px 3px 10px -5px rgba(0,0,0,0.3);
   box-shadow: 16px 8px 24px 2px rgba(0,0,0,0.14), 6px 3px 30px 5px rgba(0,0,0,0.12), 8px 3px 10px -5px rgba(0,0,0,0.3);
   opacity: 0;
 }
@@ -819,6 +820,7 @@ section.section {
   color: #8A740C;
 }
 #contact-us .lower-half input:focus {
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 #contact-us .social a {
@@ -876,7 +878,7 @@ section.section {
     margin: 0;
   }
   #nav ul li a {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   #about .about-text h2 {

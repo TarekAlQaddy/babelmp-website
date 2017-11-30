@@ -1,6 +1,7 @@
 var BREAK_POINT = 850
 var body = $('body');
 var mainImage = $('#main-image');
+var backVideo = $('#background-video');
 var memberEmail = $('#team-member-email');
 var memberLinks = $('#team-member-links');
 var teamContainer = $('#team-container');
@@ -170,9 +171,13 @@ teamMembers.each(function (index) {
 });
 
 services.each(function (index) {
-  $(this).on('mouseenter touchstart', function () {
-    servicesBackground.removeClass('active');
-    $(servicesBackground[index]).addClass('active');
+  $(this).on('mouseenter click', function () {
+    if (window.innerWidth > BREAK_POINT) {
+      servicesBackground.each(function () {
+        $(this).removeClass('active')
+      })
+      $(servicesBackground[index]).addClass('active');
+    }
   })
 });
 
@@ -195,7 +200,17 @@ repositionTeamMembers();
 $('#iframe-modal').iziModal({
   iframe: true,
   iframeHeight: 400,
-  iframeURL: "https://www.youtube.com/embed/KYuylu6PVsI?autoplay=1?rel=0&amp;controls=0&amp;showinfo=0"
+  iframeURL: "https://player.vimeo.com/video/245121021",
+  onOpening: function () {
+    if (window.innerWidth > BREAK_POINT) {
+      backVideo[0].pause()
+    }
+  },
+  onClosing: function () {
+    if (window.innerWidth > BREAK_POINT) {
+      backVideo[0].play()
+    }
+  }
 });
 $('#open-video').on('click', function () {
   $('#iframe-modal').iziModal('open')
