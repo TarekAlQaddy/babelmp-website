@@ -3,6 +3,8 @@ var body = $('body');
 var mainImage = $('#main-image');
 var backVideo = $('#background-video');
 var memberEmail = $('#team-member-email');
+var memberName = $('#team-member-name');
+var memberPosition = $('#team-member-position');
 var memberLinks = $('#team-member-links');
 var teamContainer = $('#team-container');
 var teamMembers = $('.team-member');
@@ -14,63 +16,71 @@ var services = $('.service');
 var servicesBackground = $('#services .image');
 var team = [
   {
-    image: 'media/images/amr-ismail-big.jpg',
+    name: 'Amr Ahmed Ismail',
+    position: 'Founder & CEO',
+    image: 'media/images/team/amr-full.jpg',
     email: 'amr.ismail@babelmp.com',
     links: {
-      linkedin: 'https://www.google.com',
-      behance: 'https://www.facebook.com',
-      instagram: 'https://www.go.com'
+      linkedin: 'https://www.linkedin.com/in/amr-ahmed-ismail-45845392/',
+      behance: 'https://www.behance.net/amrahmedismail'
     }
   },
   {
-    image: 'media/images/services-media.jpg',
+    name: 'Sherif Ashraf',
+    position: 'Chief Technical Officer',
+    image: 'media/images/team/team.jpg',
     email: 'sherif.ashraf@babelmp.com',
     links: {
-      linkedin: 'https://www.fo.com',
-      behance: 'https://www.bar.com',
-      instagram: 'https://www.fofo.com'
+      behance: 'https://www.behance.net/SherifGabr'
     }
   },
   {
-    image: 'media/images/services-video.jpg',
-    email: 'sawi@babelmp.com',
+    name: 'Ahmed El-Sawi',
+    position: 'Photographer',
+    image: 'media/images/team/sawi-full.jpg',
+    email: 'ahmed.elsawi@babelmp.com',
     links: {
-      linkedin: 'https://www..com',
-      instagram: 'https://www.g.com'
+      behance: 'https://www.behance.net/Ahmedelsaw607e'
     }
   },
   {
-    image: 'media/images/project-ajyal.jpg',
+    name: 'Tarek Alqaddy',
+    position: 'Front End Developer',
+    image: 'media/images/team/tarek-full.jpg',
     email: 'tarek.alqaddy@babelmp.com',
     links: {
-      linkedin: 'https://www.tett.com',
-      github: 'https://www.ftttt.com',
-      twitter: 'https://www.go.com'
+      linkedin: 'https://www.linkedin.com/in/tarek-alqaddy/',
+      github: 'https://github.com/tarekalqaddy'
     }
   },
   {
-    image: 'media/images/project-ajyal.jpg',
+    name: 'Amr Fathy',
+    position: 'Back End Developer',
+    image: 'media/images/team/team.jpg',
     email: 'amr.fathy@babelmp.com',
     links: {
-      linkedin: 'https://www.fathy.com',
-      github: 'https://www.fthhh.com',
-      twitter: 'https://www.yyyy.com'
+      github: 'https://github.com/amrufathy',
+      linkedin: 'https://www.linkedin.com/in/amrufathy/'
     }
   },
   {
-    image: 'media/images/project-ajyal.jpg',
-    email: 'tarek.alqaddy@babelmp.com',
+    name: 'Mohammed Ghannam',
+    position: 'Back End Developer',
+    image: 'media/images/team/team.jpg',
+    email: 'mohammed.ghannam@babelmp.com',
     links: {
-      twitter: 'https://www.go.com'
+      github: 'https://github.com/mmghannam',
+      linkedin: 'https://www.linkedin.com/in/mohammad-ghannam-a69276b2/'
     }
   },
   {
-    image: 'media/images/amr-ismail-big.jpg',
-    email: 'emam#babelmp.com',
+    name: 'Mohamed Emam',
+    position: 'Game Developer',
+    image: 'media/images/team/emam-full.jpg',
+    email: 'mohamed.emam@babelmp.com',
     links: {
-      linkedin: 'https://www.tett.com',
-      github: 'https://www.ftttt.com',
-      twitter: 'https://www.go.com'
+      linkedin: 'https://www.linkedin.com/in/mohamed-emam-43601b104/',
+      github: 'https://github.com/emam95'
     }
   }
 ];
@@ -138,7 +148,9 @@ teamMembers.each(function (index) {
   $(this).on('click', function () {
     var imageUrl = 'url("' + team[index].image + '")';
     mainImage.removeClass('active');
+    memberName.html(team[index].name)
     memberEmail.html(team[index].email)
+    memberPosition.html(team[index].position)
     memberLinks.html('');
     Object.keys(team[index].links).forEach(function (key) {
       img = $('<img>', {
@@ -215,3 +227,4 @@ $('#iframe-modal').iziModal({
 $('#open-video').on('click', function () {
   $('#iframe-modal').iziModal('open')
 });
+
