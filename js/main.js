@@ -231,5 +231,5 @@ $('#open-video').on('click', function () {
 });
 
 window.addEventListener('load', function () {
-  preloader.fadeOut(500);
+  preloader.fadeOut(1000);
 })
