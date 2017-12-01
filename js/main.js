@@ -1,7 +1,6 @@
 var BREAK_POINT = 850
 var body = $('body');
 var preloader = $('#preloader');
-var preloaderOmg = $('preloader-img');
 var mainImage = $('#main-image');
 var backVideo = $('#background-video');
 var memberEmail = $('#team-member-email');
@@ -205,11 +204,19 @@ function repositionTeamMembers() {
     }
   })
 }
+function servicesDefault () {
+  if (window.innerWidth < BREAK_POINT) {
+    servicesBackground.removeClass('active')
+    $(servicesBackground.get(2)).addClass('active')
+  }
+}
 
 window.addEventListener('resize', function () {
-  repositionTeamMembers()
+  repositionTeamMembers();
+  servicesDefault();
 });
 repositionTeamMembers();
+servicesDefault();
 
 $('#iframe-modal').iziModal({
   iframe: true,

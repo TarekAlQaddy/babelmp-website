@@ -65,6 +65,7 @@ section.section {
 }
 
 #preloader img {
+  width: 120px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -200,6 +201,10 @@ section.section {
 /*      LANDING       */
 /**********************/
 
+
+#mobile-logo {
+  display: none;
+}
 #landing {
   padding-top: 40vh;
 }
@@ -371,6 +376,9 @@ section.section {
   opacity: 0;
   -webkit-transform: translateY(100%) translateX(25%);
   transform: translateY(100%) translateX(25%);
+}
+#projects .box-foreground .description h6 a {
+  color: #f1c40f;
 }
 #projects .box:hover .box-background {
   -webkit-transform: scale(1.2);
@@ -730,7 +738,7 @@ section.section {
   background: #363636;
 }
 #about .about-clients .clients-block {
-  margin: 5% 0;
+  margin: 2% 0;
 }
 #about .about-clients .category {
   font-size: 1.9rem;
@@ -1197,7 +1205,17 @@ section.section {
   /**********************/
 
   #landing {
-    padding-top: 30vh;
+    padding: 20px;
+  }
+  #mobile-logo {
+    display: block;
+    margin-bottom: 20px;
+  }
+  #mobile-logo img {
+    width: 80px;
+  }
+  #landing .text-container {
+    padding-top: 15vh;
   }
   #landing .text-container h1 {
     font-size: 6.5rem;
@@ -1369,7 +1387,10 @@ section.section {
     margin: 2% 0;
   }
   #landing {
-    padding-top: 25vh;
+    /*padding-top: 25vh;*/
+  }
+  #landing .text-container {
+    padding-top: 0;
   }
   #team .main-image-container {
     height: 400px;
@@ -1436,10 +1457,20 @@ section.section {
 }
 @media all and (orientation: portrait) and (max-width: 450px) {
   #landing {
-    padding-top: 10vh;
+    /*padding-top: 10vh;*/
+  }
+  #landing .text-container {
+    padding-top: 5vh;
   }
   #mobile-nav-ul li a {
     font-size: 3rem;
+  }
+  #links-ul li img {
+    width: 35px;
+    height: 35px;
+  }
+  #mobile-nav > a img {
+    width: 75px;
   }
   #about .about-clients h2 {
     font-size: 7rem;
