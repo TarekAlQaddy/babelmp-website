@@ -30,7 +30,7 @@ var team = [
   {
     name: 'Sherif Ashraf',
     position: 'Chief Technical Officer',
-    image: 'media/images/team/team.jpg',
+    image: 'media/images/team/sherif-full.jpg',
     email: 'sherif.ashraf@babelmp.com',
     links: {
       behance: 'https://www.behance.net/SherifGabr'
@@ -58,7 +58,7 @@ var team = [
   {
     name: 'Amr Fathy',
     position: 'Back End Developer',
-    image: 'media/images/team/team.jpg',
+    image: 'media/images/team/fathy-full.jpg',
     email: 'amr.fathy@babelmp.com',
     links: {
       github: 'https://github.com/amrufathy',
@@ -68,7 +68,7 @@ var team = [
   {
     name: 'Mohammed Ghannam',
     position: 'Back End Developer',
-    image: 'media/images/team/team.jpg',
+    image: 'media/images/team/ghannam-full.jpg',
     email: 'mohammed.ghannam@babelmp.com',
     links: {
       github: 'https://github.com/mmghannam',
@@ -185,7 +185,7 @@ teamMembers.each(function (index) {
 });
 
 services.each(function (index) {
-  $(this).on('mouseenter click', function () {
+  $(this).on('mouseenter', function () {
     if (window.innerWidth > BREAK_POINT) {
       servicesBackground.each(function () {
         $(this).removeClass('active')
@@ -214,7 +214,7 @@ repositionTeamMembers();
 $('#iframe-modal').iziModal({
   iframe: true,
   iframeHeight: 400,
-  iframeURL: "https://player.vimeo.com/video/245121021",
+  iframeURL: "https://player.vimeo.com/video/245121021?autoplay=1&loop=1&color=f1c40f&title=0&byline=0&portrait=0",
   onOpening: function () {
     if (window.innerWidth > BREAK_POINT) {
       backVideo[0].pause()
