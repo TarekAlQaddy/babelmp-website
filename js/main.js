@@ -86,19 +86,78 @@ var team = [
   }
 ];
 var linkStrings = ['projects', 'services', 'about', 'team', 'contact-us'];
-var navFlag = 0;
+var navFlag = false;
+
+var lazyloaders = {
+  '2': {
+    load: function () {
+      this.loaded = true
+      return lazyload(document.querySelectorAll('#projects .lazyload'))
+    },
+    loaded: false
+  },
+  '3': {
+    load: function () {
+      this.loaded = true
+      return lazyload(document.querySelectorAll('#services .lazyload'))
+    },
+    loaded: false
+  },
+  '4': {
+    load: function () {
+      this.loaded = true
+      return lazyload(document.querySelectorAll('#about .lazyload'))
+    },
+    loaded: false
+  },
+  '5': {
+    load: function () {
+      this.loaded = true
+      return lazyload(document.querySelectorAll('#team .lazyload'))
+    },
+    loaded: false
+  },
+  loadAll: function () {
+    var self = this
+    Object.keys(this).forEach(function (key) {
+      if (Number(key) > 0 && Number(key) < 6) {
+        self[key].load().loadImages()
+      }
+    })
+  }
+
+};
+
+function loadImages(index) {
+  if (Number(index) > 5 || Number(index) < 1) return
+  if (!lazyloaders[index].loaded) {
+    lazyloaders[index].load().loadImages()
+  }
+}
+
+function firstImagesLoad () {
+  if (window.innerWidth > BREAK_POINT) {
+    loadImages('2')
+  } else {
+    lazyloaders.loadAll();
+  }
+}
 
 $('#fullpage').onepage_scroll({
   animationTime: 700,
   pagination: false,
   responsiveFallback: BREAK_POINT,
   loop: false,
-  easing: 'cubic-bezier(0.86, 0, 0.07, 1)'
+  easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
+  afterMove: function (index) {
+    loadImages(String(index + 1))
+  }
 });
 $('#slick').slick({
   prevArrow: $('#custom-prev'),
   nextArrow: $('#custom-next'),
   slidesToShow: 2,
+  lazyLoad: 'ondemand',
   responsive: [
     {
       breakpoint: 650,
@@ -135,8 +194,8 @@ function toggleNav(isOpened) {
 navLinks.each(function () {
   var link = $(this);
   link.on('click', function () {
-    if (window.innerWidth <= BREAK_POINT) {
-      toggleNav(1);
+    if (window.innerWidth < BREAK_POINT) {
+      toggleNav(true);
       window.location = '#' +  link.data('link');
     } else {
       $.fn.moveTo(linkStrings.indexOf(link.data('link')) + 2);
@@ -204,16 +263,17 @@ function repositionTeamMembers() {
     }
   })
 }
-function servicesDefault () {
+function servicesDefault (index) {
   if (window.innerWidth < BREAK_POINT) {
     servicesBackground.removeClass('active')
-    $(servicesBackground.get(2)).addClass('active')
+    $(servicesBackground.get(index)).addClass('active')
   }
 }
 
 window.addEventListener('resize', function () {
   repositionTeamMembers();
-  servicesDefault();
+  servicesDefault(2);
+  firstImagesLoad();
 });
 repositionTeamMembers();
 servicesDefault();
@@ -239,4 +299,5 @@ $('#open-video').on('click', function () {
 
 window.addEventListener('load', function () {
   preloader.fadeOut(1000);
+  firstImagesLoad();
 })

@@ -427,26 +427,28 @@ section.section {
   -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
   z-index: 3;
+  background: center center no-repeat;
+  background-size: cover;
 }
 #services .background-images .image.active {
   opacity: 1;
 }
-#services .background-images .image:first-child {
-  background: url("../media/images/services/design-branding.jpg") center center no-repeat;
-  background-size: cover;
-}
-#services .background-images .image:nth-child(2) {
-  background: url("../media/images/services/development.jpg") center center no-repeat;
-  background-size: cover;
-}
-#services .background-images .image:nth-child(3) {
-  background: url("../media/images/services/video-production.jpg") center center no-repeat;
-  background-size: cover;
-}
-#services .background-images .image:nth-child(4) {
-  background: url("../media/images/services/media-coverage.jpg") center center no-repeat;
-  background-size: cover;
-}
+/*#services .background-images .image:first-child {*/
+  /*background: center center no-repeat;*/
+  /*background-size: cover;*/
+/*}*/
+/*#services .background-images .image:nth-child(2) {*/
+  /*background: url("../media/images/services/development.jpg") center center no-repeat;*/
+  /*background-size: cover;*/
+/*}*/
+/*#services .background-images .image:nth-child(3) {*/
+  /*background: url("../media/images/services/video-production.jpg") center center no-repeat;*/
+  /*background-size: cover;*/
+/*}*/
+/*#services .background-images .image:nth-child(4) {*/
+  /*background: url("../media/images/services/media-coverage.jpg") center center no-repeat;*/
+  /*background-size: cover;*/
+/*}*/
 #services .services-list {
   z-index: 4;
   display: flex;
@@ -622,6 +624,8 @@ section.section {
   -webkit-box-shadow: 16px 8px 24px 2px rgba(0,0,0,0.14), 6px 3px 30px 5px rgba(0,0,0,0.12), 8px 3px 10px -5px rgba(0,0,0,0.3);
   box-shadow: 16px 8px 24px 2px rgba(0,0,0,0.14), 6px 3px 30px 5px rgba(0,0,0,0.12), 8px 3px 10px -5px rgba(0,0,0,0.3);
   opacity: 0;
+  background: center center no-repeat;
+  background-size: cover;
 }
 #team .team-member.active {
   opacity: 1;
@@ -646,39 +650,26 @@ section.section {
 #team .team-member:not(:first-child) {
   margin-left: -18%;
 }
+
 #team .team-member:first-child {
-  background: url("../media/images/team/amr ismail.jpg") center center no-repeat;
-  background-size: cover;
   z-index: 12;
 }
 #team .team-member:nth-child(2) {
-  background: url("../media/images/team/sherif.jpg") center center no-repeat;
-  background-size: cover;
   z-index: 11;
 }
 #team .team-member:nth-child(3) {
-  background: url("../media/images/team/sawi.jpg") center center no-repeat;
-  background-size: cover;
   z-index: 10;
 }
 #team .team-member:nth-child(4) {
-  background: url("../media/images/team/tarek.jpg") center center no-repeat;
-  background-size: cover;
   z-index: 9;
 }
 #team .team-member:nth-child(5) {
-  background: url("../media/images/team/fat7i.jpg") center center no-repeat;
-  background-size: cover;
   z-index: 8;
 }
 #team .team-member:nth-child(6) {
-  background: url("../media/images/team/ghannam.jpg") center center no-repeat;
-  background-size: cover;
   z-index: 7;
 }
 #team .team-member:nth-child(7) {
-  background: url("../media/images/team/emam.jpg") center center no-repeat;
-  background-size: cover;
   z-index: 6;
 }
 
@@ -761,97 +752,99 @@ section.section {
   filter: grayscale(1);
   -webkit-transition: filter 0.3s;
   transition: filter 0.3s;
+  background: center center no-repeat;
+  background-size: contain;
 }
 #about .about-clients .client:hover {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
 }
-#about .brands .client:first-child {
-  background: url("../media/images/clients/careem.png") center center no-repeat;
-  background-size: contain;
-}
-#about .brands .client:nth-child(2) {
-  background: url("../media/images/clients/wuzzuf.png") center center no-repeat;
-  background-size: contain;
-}
-#about .brands .client:nth-child(3) {
-  background: url("../media/images/clients/logoJAZ.png") center center no-repeat;
-  background-size: contain;
-}
-#about .brands .client:nth-child(4) {
-  background: url("../media/images/clients/forasna.png") center center no-repeat;
-  background-size: contain;
-}
-#about .brands .client:nth-child(5) {
-  background: url("../media/images/clients/saber.png") center center no-repeat;
-  background-size: contain;
-}
-#about .brands .client:nth-child(6) {
-  background: url("../media/images/clients/brimore.png") center center no-repeat;
-  background-size: contain;
-}
-#about .brands .client:nth-child(7) {
-  background: url("../media/images/clients/phillip.png") center center no-repeat;
-  background-size: contain;
-}
-#about .brands .client:nth-child(8) {
-  background: url("../media/images/clients/mdaaen.png") center center no-repeat;
-  background-size: contain;
-}
-#about .brands .client:nth-child(9) {
-  background: url("../media/images/clients/idp.png") center center no-repeat;
-  background-size: contain;
-}
-#about .brands .client:nth-child(10) {
-  background: url("../media/images/clients/ajyal.png") center center no-repeat;
-  background-size: contain;
-}
+/*#about .brands .client:first-child {*/
+  /*background: url("..") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .brands .client:nth-child(2) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .brands .client:nth-child(3) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .brands .client:nth-child(4) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .brands .client:nth-child(5) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .brands .client:nth-child(6) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .brands .client:nth-child(7) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .brands .client:nth-child(8) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .brands .client:nth-child(9) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .brands .client:nth-child(10) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
 
-#about .entities .client:first-child {
-  background: url("../media/images/clients/undp.png") center center no-repeat;
-  background-size: contain;
-}
-#about .entities .client:nth-child(2) {
-  background: url("../media/images/clients/Leo-alphas.png") center center no-repeat;
-  background-size: contain;
-}
-#about .entities .client:nth-child(3) {
-  background: url("../media/images/clients/lions.png") center center no-repeat;
-  background-size: contain;
-}
-#about .entities .client:nth-child(4) {
-  background: url("../media/images/clients/blue-V1.png") center center no-repeat;
-  background-size: contain;
-}
-#about .entities .client:nth-child(5) {
-  background: url("../media/images/clients/aisec.png") center center no-repeat;
-  background-size: contain;
-}
-#about .entities .client:nth-child(6) {
-  background: url("../media/images/clients/sit.png") center center no-repeat;
-  background-size: contain;
-}
-#about .entities .client:nth-child(7) {
-  background: url("../media/images/clients/straw.png") center center no-repeat;
-  background-size: contain;
-}
-#about .entities .client:nth-child(8) {
-  background: url("../media/images/clients/icealex.png") center center no-repeat;
-  background-size: contain;
-}
+/*#about .entities .client:first-child {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .entities .client:nth-child(2) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .entities .client:nth-child(3) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .entities .client:nth-child(4) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .entities .client:nth-child(5) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .entities .client:nth-child(6) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .entities .client:nth-child(7) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .entities .client:nth-child(8) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
 
-#about .startups .client:first-child {
-  background: url("../media/images/clients/pimula.png") center center no-repeat;
-  background-size: contain;
-}
-#about .startups .client:nth-child(2) {
-  background: url("../media/images/clients/american-boulevard-shop.png") center center no-repeat;
-  background-size: contain;
-}
-#about .startups .client:nth-child(3) {
-  background: url("../media/images/clients/mentos.png") center center no-repeat;
-  background-size: contain;
-}
+/*#about .startups .client:first-child {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .startups .client:nth-child(2) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
+/*#about .startups .client:nth-child(3) {*/
+  /*background: url("../") center center no-repeat;*/
+  /*background-size: contain;*/
+/*}*/
 
 
 /**********************/
