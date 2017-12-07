@@ -80,8 +80,8 @@ var team = [
     image: 'media/images/team/emam-full.jpg',
     email: 'mohamed.emam@babelmp.com',
     links: {
-      linkedin: 'https://www.linkedin.com/in/mohamed-emam-43601b104/',
-      github: 'https://github.com/emam95'
+      linkedin: 'https://www.linkedin.com/in/m-emam/',
+      github: 'https://github.com/mohemam'
     }
   }
 ];
@@ -129,9 +129,10 @@ var lazyloaders = {
 };
 
 function loadImages(index) {
+  console.trace(index)
   if (Number(index) > 5 || Number(index) < 1) return
   if (!lazyloaders[index].loaded) {
-    lazyloaders[index].load().loadImages()
+    lazyloaders[String(index)].load().loadImages()
   }
 }
 
@@ -199,6 +200,7 @@ navLinks.each(function () {
       window.location = '#' +  link.data('link');
     } else {
       $.fn.moveTo(linkStrings.indexOf(link.data('link')) + 2);
+      lazyloaders.loadAll();
     }
   })
 });
