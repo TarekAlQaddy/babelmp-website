@@ -1,4 +1,4 @@
-var BREAK_POINT = 850
+var BREAK_POINT = 850;
 var body = $('body');
 var preloader = $('#preloader');
 var mainImage = $('#main-image');
@@ -88,32 +88,36 @@ var team = [
 var linkStrings = ['projects', 'services', 'about', 'team', 'contact-us'];
 var navFlag = false;
 
+function sectionLazyload (selector) {
+  return lazyload(document.querySelectorAll(selector))
+}
+
 var lazyloaders = {
   '2': {
     load: function () {
       this.loaded = true
-      return lazyload(document.querySelectorAll('#projects .lazyload'))
+      return sectionLazyload('#projects .lazyload')
     },
     loaded: false
   },
   '3': {
     load: function () {
       this.loaded = true
-      return lazyload(document.querySelectorAll('#services .lazyload'))
+      return sectionLazyload('#services .lazyload')
     },
     loaded: false
   },
   '4': {
     load: function () {
       this.loaded = true
-      return lazyload(document.querySelectorAll('#about .lazyload'))
+      return sectionLazyload('#about .lazyload')
     },
     loaded: false
   },
   '5': {
     load: function () {
       this.loaded = true
-      return lazyload(document.querySelectorAll('#team .lazyload'))
+      return sectionLazyload('#team .lazyload')
     },
     loaded: false
   },
@@ -125,11 +129,9 @@ var lazyloaders = {
       }
     })
   }
-
 };
 
 function loadImages(index) {
-  console.trace(index)
   if (Number(index) > 5 || Number(index) < 1) return
   if (!lazyloaders[index].loaded) {
     lazyloaders[String(index)].load().loadImages()
@@ -142,6 +144,10 @@ function firstImagesLoad () {
   } else {
     lazyloaders.loadAll();
   }
+}
+
+function loadVideo () {
+  $('#background-video')[0].preload = 'auto'
 }
 
 $('#fullpage').onepage_scroll({
@@ -302,4 +308,5 @@ $('#open-video').on('click', function () {
 window.addEventListener('load', function () {
   preloader.fadeOut(1000);
   firstImagesLoad();
+  loadVideo();
 })
