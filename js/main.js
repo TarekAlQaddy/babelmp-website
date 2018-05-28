@@ -142,7 +142,9 @@ function firstImagesLoad () {
   if (window.innerWidth > BREAK_POINT) {
     loadImages('2')
   } else {
-    lazyloaders.loadAll();
+    setTimeout(function () {
+      lazyloaders.loadAll();
+    }, 50)
   }
 }
 
